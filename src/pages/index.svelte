@@ -3,8 +3,12 @@
 </script>
 
 <main
-  class="flex items-center justify-center flex-col gap-3 text-xl h-screen w-screen"
+  class="w-full h-full flex items-center justify-center flex-col gap-3 text-xl"
 >
+  <div>
+    <a href="/login" class="bg-blue-400 p-3 rounded text-white"> Login</a>
+    <a href="/register" class="bg-red-400 p-3 rounded text-white"> Register</a>
+  </div>
   <div>
     <a href="https://svelte.dev/" class="text-orange-600"> Svelte </a>
     <a href="https://tailwindcss.com/" class="text-blue-600"> TailwindCSS </a>
