@@ -11,7 +11,7 @@ hecho con
 
 ## ¿Cómo lo ejecuto en local?
 
-Necesitarás tener instalado `Node.js` a partir de la versión 14 y tener acceso a una terminal para seguir los siguientes pasos:
+Necesitarás tener instalado `Node.js` a partir de la versión 18 y tener acceso a una terminal para seguir los siguientes pasos:
 
 ```
 npm install # instalar las dependencias
