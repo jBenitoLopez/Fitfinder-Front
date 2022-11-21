@@ -1,5 +1,3 @@
-# Svelte + TS + Vite + Tailwind + Routify
-
 # Fitfinder
 Una plataforma tipo red social de gimnasios
 
@@ -8,7 +6,7 @@ hecho con
 - [Svelte]([https://reactjs.org/](https://svelte.dev/)) 
   - [Typescript](https://www.typescriptlang.org/) 
   - [Tailwind](https://tailwindcss.com/) 
-  - [Routify]((https://www.routify.dev/)
+  - [Routify](https://www.routify.dev/)
 - [ViteJS](https://vitejs.dev) (Empaquetador)
 
 ## ¿Cómo lo ejecuto en local?
