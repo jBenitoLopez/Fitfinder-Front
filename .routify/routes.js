@@ -1,11 +1,11 @@
 
 /**
  * @roxi/routify 2.18.8
- * File generated Sun Nov 20 2022 17:28:50 GMT+0300 (GMT+03:00)
+ * File generated Thu Nov 24 2022 23:18:56 GMT+0100 (hora estándar de Europa central)
  */
 
 export const __version = "2.18.8"
-export const __timestamp = "2022-11-20T14:28:50.867Z"
+export const __timestamp = "2022-11-24T22:18:56.829Z"
 
 //buildRoutes
 import { buildClientTree } from "@roxi/routify/runtime/buildRoutes"
@@ -22,7 +22,7 @@ export const _tree = {
   "filepath": "/_layout.svelte",
   "root": true,
   "ownMeta": {},
-  "absolutePath": "/home/osman/Projects/en_esp_proj3/svelte-ts-tailwind-routify-vite/src/pages/_layout.svelte",
+  "absolutePath": "C:/Users/devcr/Desktop/Devathon/Fitfinder-Front/src/pages/_layout.svelte",
   "children": [
     {
       "isFile": true,
@@ -32,7 +32,7 @@ export const _tree = {
       "name": "index",
       "ext": "svelte",
       "badExt": false,
-      "absolutePath": "/home/osman/Projects/en_esp_proj3/svelte-ts-tailwind-routify-vite/src/pages/index.svelte",
+      "absolutePath": "C:/Users/devcr/Desktop/Devathon/Fitfinder-Front/src/pages/index.svelte",
       "importPath": "../src/pages/index.svelte",
       "isLayout": false,
       "isReset": false,
@@ -57,7 +57,7 @@ export const _tree = {
       "name": "login",
       "ext": "svelte",
       "badExt": false,
-      "absolutePath": "/home/osman/Projects/en_esp_proj3/svelte-ts-tailwind-routify-vite/src/pages/login.svelte",
+      "absolutePath": "C:/Users/devcr/Desktop/Devathon/Fitfinder-Front/src/pages/login.svelte",
       "importPath": "../src/pages/login.svelte",
       "isLayout": false,
       "isReset": false,
@@ -82,7 +82,7 @@ export const _tree = {
       "name": "register",
       "ext": "svelte",
       "badExt": false,
-      "absolutePath": "/home/osman/Projects/en_esp_proj3/svelte-ts-tailwind-routify-vite/src/pages/register.svelte",
+      "absolutePath": "C:/Users/devcr/Desktop/Devathon/Fitfinder-Front/src/pages/register.svelte",
       "importPath": "../src/pages/register.svelte",
       "isLayout": false,
       "isReset": false,
@@ -107,7 +107,7 @@ export const _tree = {
       "name": "user",
       "ext": "",
       "badExt": false,
-      "absolutePath": "/home/osman/Projects/en_esp_proj3/svelte-ts-tailwind-routify-vite/src/pages/user",
+      "absolutePath": "C:/Users/devcr/Desktop/Devathon/Fitfinder-Front/src/pages/user",
       "children": [
         {
           "isFile": true,
@@ -117,7 +117,7 @@ export const _tree = {
           "name": "[userid]",
           "ext": "svelte",
           "badExt": false,
-          "absolutePath": "/home/osman/Projects/en_esp_proj3/svelte-ts-tailwind-routify-vite/src/pages/user/[userid].svelte",
+          "absolutePath": "C:/Users/devcr/Desktop/Devathon/Fitfinder-Front/src/pages/user/[userid].svelte",
           "importPath": "../src/pages/user/[userid].svelte",
           "isLayout": false,
           "isReset": false,
@@ -142,7 +142,7 @@ export const _tree = {
           "name": "index",
           "ext": "svelte",
           "badExt": false,
-          "absolutePath": "/home/osman/Projects/en_esp_proj3/svelte-ts-tailwind-routify-vite/src/pages/user/index.svelte",
+          "absolutePath": "C:/Users/devcr/Desktop/Devathon/Fitfinder-Front/src/pages/user/index.svelte",
           "importPath": "../src/pages/user/index.svelte",
           "isLayout": false,
           "isReset": false,
