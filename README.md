@@ -1,25 +1,28 @@
 # Fitfinder
-Una plataforma tipo red social de gimnasios
+A gym social network platform
 
-hecho con
-
+Technologies used
 - [Svelte](https://svelte.dev/)
   - [Typescript](https://www.typescriptlang.org/) 
   - [Tailwind](https://tailwindcss.com/) 
   - [Routify](https://www.routify.dev/)
-- [ViteJS](https://vitejs.dev) (Empaquetador)
+- [ViteJS](https://vitejs.dev) (Build tool)
 
-## ¿Cómo lo descargo a mi local?
+## How do I download it locally?
+We start our terminal (example Git Bash) and write `git clone` + url HTTPS o SSH.
 
-Iniciamos nuestra terminal (ejemplo Git Bash) y Hacemos `git clone` + url HTTPS o SSH.
-
-## ¿Cómo lo ejecuto en local?
-
-Necesitarás tener instalado `Node.js` a partir de la versión 18 y tener acceso a una terminal para seguir los siguientes pasos:
+## How does it run locally?
+You will need to have `Node.js` installed as of version 18 and have access to a terminal to follow the steps below:
 
 ```
-npm install # instalar las dependencias
-npm run dev # levantar el entorno de desarrollo
+npm install   (install dependencies)
+npm run dev   (start the development environment)
 ```
 
+
+> In gratitude to [Pedro Plasencia](https://programacion-es.dev) that makes it possible to carry out a project of these magnitudes
+> 
+> This project belongs to 3rd DEVATHON - Team 2 **
+
+- Go to the [back-end](https://github.com/imollm/fitmeup-backend) repository
 
