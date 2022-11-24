@@ -20,3 +20,9 @@ npm run dev   (start the development environment)
 ```
 
 
+> In gratitude to [Pedro Plasencia](https://programacion-es.dev) that makes it possible to carry out a project of these magnitudes
+> 
+> This project belongs to 3rd DEVATHON - Team 2 **
+
+- Go to the [back-end](https://github.com/imollm/fitmeup-backend) repository
+
