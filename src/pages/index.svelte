@@ -3,7 +3,7 @@
 </script>
 
 <main
-  class="w-full h-full flex items-center justify-center flex-col gap-3 text-xl"
+  class="bg-heroFit bg-cover w-full h-full flex items-center justify-center flex-col gap-3 text-xl"
 >
   <div>
     <a href="/login" class="bg-blue-400 p-3 rounded text-white"> Login</a>
