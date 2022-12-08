@@ -3,31 +3,11 @@
 </script>
 
 <main
-  class="bg-heroFit bg-cover w-full h-full flex items-center justify-center flex-col gap-3 text-xl"
+  class="bg-heroFit bg-cover w-full h-full flex items-center justify-center flex-col gap-3 text-4xl"
 >
-  <!--
-  <div class="bg-black max-w-md">
-    <a href="/login" class="mx-10 bg-blue-400 p-3 rounded text-white"> Login</a>
-    <a href="/register" class="bg-red-400 p-3 rounded text-white"> Register</a>
-  </div>
-  <div>
-    <a href="https://svelte.dev/" class="text-orange-600"> Svelte </a>
-    <a href="https://tailwindcss.com/" class="text-blue-600"> TailwindCSS </a>
-    <a href="https://www.typescriptlang.org/" class="text-blue-300">
-      TypeScript
-    </a>
-    <a href="https://www.routify.dev/" class="text-violet-600"> Routify </a>
-    <a href="https://vitejs.dev/" class="text-orange-600"> Vite </a>
-  </div>
-  <button
-    class="button shadow-lg p-3 bg-blue-300 rounded-xl text-white"
-    on:click={() => count++}
-  >
-    Counter {count}
-  </button>
--->
-  <template>
-    <div class="p-5 h-screen bg-gray-100">
+  <p>SE TU MEJOR</p>
+  <section class="">
+    <div class="p-5 screen bg-gray-100">
       <h1 class="text-xl mb-2">Top Ten Gym</h1>
   
       <div class="overflow-auto rounded-lg shadow hidden md:block">
@@ -79,10 +59,18 @@
           </tbody>
         </table>
       </div>
+
+      <div class="bk-slate-400 p-7 m-1 rounded border-black ">
+        <p>The best Gym reviews</p>
+      </div>
+
+      <div class="p-7 m-1">
+        <p>Latest Gym Comments</p>
+      </div>
   
       
     </div>
-  </template>
+  </section>
 
 
 </main>
