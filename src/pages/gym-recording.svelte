@@ -1,18 +1,14 @@
 <script lang="ts">
   import { goto } from "@roxi/routify";
-  import Button from "../elements/Button.svelte";
-  import Input from "../elements/Input.svelte";
-  import Select from "../elements/Select.svelte";
-  import Textarea from "../elements/Textarea.svelte";
   import {
     InitGymRecord,
     InitGymTouchedForm,
     InitGymValidForm,
   } from "../interfaces/gym";
-
+  import { Button, Input, Select, Textarea } from "../elements/elements";
+  import { formValidate } from "../validation/gymFormValidator";
   import { saveGym } from "../services/gym";
   import { provinces_es as provinces } from "../store/address";
-  import { formValidate } from "../validation/gymFormValidator";
 
   let touchedFields = InitGymTouchedForm();
   let gym = InitGymRecord();
