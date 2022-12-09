@@ -1,6 +1,8 @@
 <script lang="ts">
   import Button from "../elements/Button.svelte";
   import Input from "../elements/Input.svelte";
+  import Select from "../elements/Select.svelte";
+  import Textarea from "../elements/Textarea.svelte";
   import {
     InitGymRecord,
     InitGymTouchedForm,
@@ -47,7 +49,8 @@
     return errors;
   };
 
-  async function validateAndSubmit(e: SubmitEvent) {
+  async function validateAndSubmit(e: PointerEvent) {
+    // e.preventDefault;
     touchedFields = InitGymTouchedForm();
     debugger;
     // if (!Object.keys(errors).length) {
@@ -104,45 +107,41 @@
     </div>
 
     <div class="mb-6">
-      <label for="open-hours" class="label">Open Hours</label>
-      <textarea
-        id="open-hours"
-        class="textarea"
+      <Textarea
         rows="5"
-        cols="33"
+        label="Open Hours"
         placeholder="Mo-Fr 7:30h to 23:00h
 Sa 9:30h-14:30h / 16:00h-20:00h
 So 10:00h-14:00h..."
         bind:value={gym.openHours}
+        on:blur={() => (touchedFields.openHours = true)}
+        error={errors.openHours}
       />
     </div>
 
     <div class="mb-6">
-      <label for="description" class="label">Description</label>
-      <textarea
-        id="description"
-        class="textarea"
+      <Textarea
         rows="5"
-        cols="33"
+        label="Description"
         placeholder="We want to have a real impact on the lives of millions of people, helping them take care of their physical well-being."
         bind:value={gym.description}
+        on:blur={() => (touchedFields.description = true)}
+        error={errors.description}
       />
     </div>
 
     <div class="mb-6">
       <label for="description" class="label">Location</label>
-      <!-- <img src={gym.logoUrl} alt="logo {gym.name}" /> -->
       <img src="../assets/img/map.jpg" alt="Map img" />
     </div>
 
     <div class="mb-6">
-      <label for="province" class="label">Province</label>
-      <select required name="province" bind:value={gym.province} class="select">
+      <Select label="Province" bind:value={gym.province}>
         <option value="">Choose Province</option>
         {#each provinces as province}
           <option value={province.code}>{province.label}</option>
         {/each}
-      </select>
+      </Select>
     </div>
 
     <div class="mb-6">
