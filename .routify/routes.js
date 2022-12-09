@@ -1,11 +1,11 @@
 
 /**
  * @roxi/routify 2.18.8
- * File generated Sun Nov 20 2022 17:28:50 GMT+0300 (GMT+03:00)
+ * File generated Fri Dec 09 2022 15:25:35 GMT+0100 (hora estándar de Europa central)
  */
 
 export const __version = "2.18.8"
-export const __timestamp = "2022-11-20T14:28:50.867Z"
+export const __timestamp = "2022-12-09T14:25:35.107Z"
 
 //buildRoutes
 import { buildClientTree } from "@roxi/routify/runtime/buildRoutes"
@@ -22,8 +22,58 @@ export const _tree = {
   "filepath": "/_layout.svelte",
   "root": true,
   "ownMeta": {},
-  "absolutePath": "/home/osman/Projects/en_esp_proj3/svelte-ts-tailwind-routify-vite/src/pages/_layout.svelte",
+  "absolutePath": "D:/www/Fitfinder-Front/src/pages/_layout.svelte",
   "children": [
+    {
+      "isFile": true,
+      "isDir": false,
+      "file": "gym-recording.svelte",
+      "filepath": "/gym-recording.svelte",
+      "name": "gym-recording",
+      "ext": "svelte",
+      "badExt": false,
+      "absolutePath": "D:/www/Fitfinder-Front/src/pages/gym-recording.svelte",
+      "importPath": "../src/pages/gym-recording.svelte",
+      "isLayout": false,
+      "isReset": false,
+      "isIndex": false,
+      "isFallback": false,
+      "isPage": true,
+      "ownMeta": {},
+      "meta": {
+        "recursive": true,
+        "preload": false,
+        "prerender": true
+      },
+      "path": "/gym-recording",
+      "id": "_gymRecording",
+      "component": () => import('../src/pages/gym-recording.svelte').then(m => m.default)
+    },
+    {
+      "isFile": true,
+      "isDir": false,
+      "file": "gyms.svelte",
+      "filepath": "/gyms.svelte",
+      "name": "gyms",
+      "ext": "svelte",
+      "badExt": false,
+      "absolutePath": "D:/www/Fitfinder-Front/src/pages/gyms.svelte",
+      "importPath": "../src/pages/gyms.svelte",
+      "isLayout": false,
+      "isReset": false,
+      "isIndex": false,
+      "isFallback": false,
+      "isPage": true,
+      "ownMeta": {},
+      "meta": {
+        "recursive": true,
+        "preload": false,
+        "prerender": true
+      },
+      "path": "/gyms",
+      "id": "_gyms",
+      "component": () => import('../src/pages/gyms.svelte').then(m => m.default)
+    },
     {
       "isFile": true,
       "isDir": false,
@@ -32,7 +82,7 @@ export const _tree = {
       "name": "index",
       "ext": "svelte",
       "badExt": false,
-      "absolutePath": "/home/osman/Projects/en_esp_proj3/svelte-ts-tailwind-routify-vite/src/pages/index.svelte",
+      "absolutePath": "D:/www/Fitfinder-Front/src/pages/index.svelte",
       "importPath": "../src/pages/index.svelte",
       "isLayout": false,
       "isReset": false,
@@ -57,7 +107,7 @@ export const _tree = {
       "name": "login",
       "ext": "svelte",
       "badExt": false,
-      "absolutePath": "/home/osman/Projects/en_esp_proj3/svelte-ts-tailwind-routify-vite/src/pages/login.svelte",
+      "absolutePath": "D:/www/Fitfinder-Front/src/pages/login.svelte",
       "importPath": "../src/pages/login.svelte",
       "isLayout": false,
       "isReset": false,
@@ -82,7 +132,7 @@ export const _tree = {
       "name": "register",
       "ext": "svelte",
       "badExt": false,
-      "absolutePath": "/home/osman/Projects/en_esp_proj3/svelte-ts-tailwind-routify-vite/src/pages/register.svelte",
+      "absolutePath": "D:/www/Fitfinder-Front/src/pages/register.svelte",
       "importPath": "../src/pages/register.svelte",
       "isLayout": false,
       "isReset": false,
@@ -107,7 +157,7 @@ export const _tree = {
       "name": "user",
       "ext": "",
       "badExt": false,
-      "absolutePath": "/home/osman/Projects/en_esp_proj3/svelte-ts-tailwind-routify-vite/src/pages/user",
+      "absolutePath": "D:/www/Fitfinder-Front/src/pages/user",
       "children": [
         {
           "isFile": true,
@@ -117,7 +167,7 @@ export const _tree = {
           "name": "[userid]",
           "ext": "svelte",
           "badExt": false,
-          "absolutePath": "/home/osman/Projects/en_esp_proj3/svelte-ts-tailwind-routify-vite/src/pages/user/[userid].svelte",
+          "absolutePath": "D:/www/Fitfinder-Front/src/pages/user/[userid].svelte",
           "importPath": "../src/pages/user/[userid].svelte",
           "isLayout": false,
           "isReset": false,
@@ -142,7 +192,7 @@ export const _tree = {
           "name": "index",
           "ext": "svelte",
           "badExt": false,
-          "absolutePath": "/home/osman/Projects/en_esp_proj3/svelte-ts-tailwind-routify-vite/src/pages/user/index.svelte",
+          "absolutePath": "D:/www/Fitfinder-Front/src/pages/user/index.svelte",
           "importPath": "../src/pages/user/index.svelte",
           "isLayout": false,
           "isReset": false,

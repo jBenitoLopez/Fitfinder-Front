@@ -1,13 +1,40 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* @tailwind variants; */
 
-html,body{
-    height:100vh;
-    width:100vw;
-    padding:0;
-    margin:0
+html,
+body {
+  height: 100vh;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
 }
-:root{
-    --header-height:40px
+
+:root {
+  --header-height: 40px;
+}
+
+@layer components {
+  a:focus {
+    @apply outline-none;
+  }
+
+  a:focus-visible {
+    @apply ring-2 ring-blue-800 ring-opacity-50 dark:ring-blue-600;
+  }
+
+  .btn {
+    @apply inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out;
+  }
+
+  .label {
+    @apply block mb-2 text-sm font-medium text-gray-900 dark:text-white;
+  }
+
+  .input,
+  .textarea,
+  .select {
+    @apply bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500;
+  }
 }
