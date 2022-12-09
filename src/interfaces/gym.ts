@@ -66,24 +66,24 @@ export const InitGymTouchedForm = (): GymTouchedForm => {
 };
 
 export interface GymValidForm {
-  name: string | null,
-  email: string | null,
-  phone: string | null,
-  openHours: string | null,
-  description: string | null,
-  province: string | null,
-  address: string | null,
+  name: string,
+  email: string,
+  phone: string,
+  openHours: string,
+  description: string,
+  province: string,
+  address: string,
 }
 
 
 export const InitGymValidForm = (): GymValidForm => {
   return {
-    name: null,
-    email: null,
-    phone: null,
-    openHours: null,
-    description: null,
-    province: null,
-    address: null
+    name: '',
+    email: '',
+    phone: '',
+    openHours: '',
+    description: '',
+    province: '',
+    address: ''
   };
 };

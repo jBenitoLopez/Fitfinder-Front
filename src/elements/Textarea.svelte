@@ -1,6 +1,6 @@
-<script>
+<script lang="ts">
   export let value = "";
-  export let error = "";
+  export let error: any = "";
   export let rows = "";
   export let label = "";
   export let placeholder = "";
@@ -20,9 +20,9 @@
   <textarea
     class="block textarea"
     class:error
-    {placeholder}
-    {value}
     rows={rows2}
+    {placeholder}
+    bind:value
     on:input
     on:blur
   />
@@ -35,7 +35,6 @@
   .error {
     border-color: #f55;
   }
-
   .error-text {
     color: #f55;
   }

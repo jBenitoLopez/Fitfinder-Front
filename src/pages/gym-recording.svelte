@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { goto } from "@roxi/routify";
   import Button from "../elements/Button.svelte";
   import Input from "../elements/Input.svelte";
   import Select from "../elements/Select.svelte";
@@ -11,15 +12,22 @@
 
   import { saveGym } from "../services/gym";
   import { provinces_es as provinces } from "../store/address";
+  import {
+    emailValidator,
+    minLengthValidator,
+    phoneValidator,
+    requiredValidator,
+  } from "../validation/validators";
 
   let touchedFields = InitGymTouchedForm();
   let gym = InitGymRecord();
+  $: gym = gym;
 
   $: gym = {
     name: "Gym 100",
     email: "gym100@fitmeup.com",
     logoUrl: "./../assets/img/map.jpg",
-    phone: "12345678",
+    phone: "123456789",
     openHours:
       "Lu-Vi 7:30h a 23:00h\nSa 9:30h a 14:30h / 16:00h. a 20:00h\nDo 10:00h- 14:00h",
     description:
@@ -37,30 +45,76 @@
   const formValidate = () => {
     const errors = InitGymValidForm();
     console.log("errors", errors);
-    if (touchedFields.name && gym.name === "") {
-      errors.name = "Name is required";
+    if (touchedFields.name) {
+      const minLength = 5;
+      if (requiredValidator(gym.name).isValid === false)
+        errors.name = requiredValidator(gym.name).error;
+      else if (minLengthValidator(gym.name, minLength).isValid === false)
+        errors.name = minLengthValidator(gym.name, minLength).error;
     }
-    // if (touchedFields.email && gym.email.length < 5) {
-    //   errors.email = "Length should be at least 5";
-    // }
-    // if (touchedFields.phone) {
-    //   errors.phone = "Phone should be at least 5";
-    // }
+
+    if (touchedFields.email) {
+      if (requiredValidator(gym.email).isValid === false)
+        errors.email = requiredValidator(gym.email).error;
+      else if (emailValidator(gym.email).isValid === false)
+        errors.email = emailValidator(gym.email).error;
+    }
+
+    if (touchedFields.phone) {
+      if (requiredValidator(gym.phone).isValid === false)
+        errors.phone = requiredValidator(gym.phone).error;
+      else if (phoneValidator(gym.phone).isValid === false)
+        errors.phone = phoneValidator(gym.phone).error;
+    }
+
+    if (touchedFields.openHours) {
+      const minLength = 5;
+      if (requiredValidator(gym.openHours).isValid === false)
+        errors.openHours = requiredValidator(gym.openHours).error;
+      else if (minLengthValidator(gym.openHours, minLength).isValid === false)
+        errors.openHours = minLengthValidator(gym.openHours, minLength).error;
+    }
+
+    if (touchedFields.description) {
+      const minLength = 50;
+      if (requiredValidator(gym.description).isValid === false)
+        errors.description = requiredValidator(gym.description).error;
+      else if (minLengthValidator(gym.description, minLength).isValid === false)
+        errors.description = minLengthValidator(
+          gym.description,
+          minLength
+        ).error;
+    }
+
+    if (touchedFields.province) {
+      if (requiredValidator(gym.province).isValid === false)
+        errors.province = requiredValidator(gym.province).error;
+    }
+
+    if (touchedFields.address) {
+      const minLength = 10;
+      if (requiredValidator(gym.address).isValid === false)
+        errors.address = requiredValidator(gym.address).error;
+      else if (minLengthValidator(gym.address, minLength).isValid === false)
+        errors.address = minLengthValidator(gym.address, minLength).error;
+    }
+
     return errors;
   };
 
   async function validateAndSubmit(e: PointerEvent) {
     // e.preventDefault;
-    touchedFields = InitGymTouchedForm();
     debugger;
-    // if (!Object.keys(errors).length) {
-    let result = await saveGym(gym).then((data) => data);
-    console.log("result: ", result);
-    if (!result.status) {
-      console.log("Problem", result.message);
-    } else {
-      console.log("Redirect to Admin Home");
-    }
+    $goto("./gyms");
+
+    // touchedFields = InitGymTouchedForm();
+    // if (!Object.values(errors).join("").length) {
+    //   const result = await saveGym(gym).then((data) => data);
+    //   if (!result.status) {
+    //     console.error("Problem", result.message);
+    //   } else {
+    //     $goto("./gym");
+    //   }
     // }
   }
 </script>
@@ -99,7 +153,7 @@
       <Input
         type="tel"
         label="Phone"
-        placeholder="+34 654 32 32 32"
+        placeholder="654323232"
         bind:value={gym.phone}
         on:blur={() => (touchedFields.phone = true)}
         error={errors.phone}

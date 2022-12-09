@@ -14,6 +14,5 @@ export async function saveGym(gym: GymRecord) {
     body: JSON.stringify(gym)
   };
   const response = await fetch(`${API_DOMAIN}${ENDPOINT_GYM}`, options);
-  debugger;
   return response.json();
 }
