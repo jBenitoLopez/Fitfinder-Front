@@ -24,10 +24,17 @@ function minLengthValidator(value: string, length) {
   return { isValid, error };
 }
 
+function requiredElementsBeenTouched(elements) {
+  for (let key in elements)
+    if (elements[key] === false) return false;
+
+  return true;
+}
 
 export {
   emailValidator,
   phoneValidator,
   requiredValidator,
-  minLengthValidator
+  minLengthValidator,
+  requiredElementsBeenTouched
 };

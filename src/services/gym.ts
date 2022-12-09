@@ -1,10 +1,10 @@
-import type { GymRecord } from '../interfaces/gym';
+import type { GymRecord, GymRecordPostResult } from '../interfaces/gym';
 
 const API_TOKEN = import.meta.env.VITE_API_TOKEN;
 const API_DOMAIN = import.meta.env.VITE_API_DOMAIN;
 const ENDPOINT_GYM = import.meta.env.VITE_ENDPOINT_GYM;
 
-export async function saveGym(gym: GymRecord) {
+export async function saveGym(gym: GymRecord): Promise<GymRecordPostResult> {
   const options = {
     method: 'POST',
     headers: {

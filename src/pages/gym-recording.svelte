@@ -9,6 +9,7 @@
   import { formValidate } from "../validation/gymFormValidator";
   import { saveGym } from "../services/gym";
   import { provinces_es as provinces } from "../store/address";
+  import { requiredElementsBeenTouched } from "../validation/validators";
 
   let touchedFields = InitGymTouchedForm();
   let gym = InitGymRecord();
@@ -34,14 +35,16 @@
   $: errors = formValidate(touchedFields, gym);
 
   async function validateAndSubmit(e: PointerEvent) {
-    // e.preventDefault;
-    $goto("./gyms");
-
+    e.preventDefault;
     touchedFields = InitGymTouchedForm();
-    if (!Object.values(errors).join("").length) {
+    if (
+      !Object.values(errors).join("").length &&
+      requiredElementsBeenTouched(touchedFields)
+    ) {
       const result = await saveGym(gym).then((data) => data);
       if (!result.status) {
-        console.error("Problem on Save Gym", result.message);
+        debugger;
+        console.error("Problem on Save Gym" + result.message);
       } else {
         $goto("./gym");
       }
