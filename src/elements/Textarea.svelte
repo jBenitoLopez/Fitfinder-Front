@@ -19,7 +19,7 @@
   {/if}
   <textarea
     class="block textarea"
-    class:error
+    class:border-error={error}
     rows={rows2}
     {placeholder}
     bind:value
@@ -30,12 +30,3 @@
     <span class="block error-text">{error}</span>
   {/if}
 </label>
-
-<style>
-  .error {
-    border-color: #f55;
-  }
-  .error-text {
-    color: #f55;
-  }
-</style>

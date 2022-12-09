@@ -9,7 +9,7 @@
     <span class="block">{label}</span>
   {/if}
 
-  <select class="block select" class:error bind:value on:blur>
+  <select class="block select" class:border-error={error} bind:value on:blur>
     <slot />
   </select>
 
@@ -17,13 +17,3 @@
     <span class="block error-text">{error}</span>
   {/if}
 </label>
-
-<style>
-  .error {
-    border-color: #f55;
-  }
-
-  .error-text {
-    color: #f55;
-  }
-</style>

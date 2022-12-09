@@ -20,7 +20,7 @@
   {/if}
   <input
     class="block input"
-    class:error
+    class:border-error={error}
     {type}
     {placeholder}
     {value}
@@ -32,13 +32,3 @@
     <span class="block error-text">{error}</span>
   {/if}
 </label>
-
-<style>
-  .error {
-    border-color: #f55;
-  }
-
-  .error-text {
-    color: #f55;
-  }
-</style>

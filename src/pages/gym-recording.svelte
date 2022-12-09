@@ -12,110 +12,44 @@
 
   import { saveGym } from "../services/gym";
   import { provinces_es as provinces } from "../store/address";
-  import {
-    emailValidator,
-    minLengthValidator,
-    phoneValidator,
-    requiredValidator,
-  } from "../validation/validators";
+  import { formValidate } from "../validation/gymFormValidator";
 
   let touchedFields = InitGymTouchedForm();
   let gym = InitGymRecord();
   $: gym = gym;
 
-  $: gym = {
-    name: "Gym 100",
-    email: "gym100@fitmeup.com",
-    logoUrl: "./../assets/img/map.jpg",
-    phone: "123456789",
-    openHours:
-      "Lu-Vi 7:30h a 23:00h\nSa 9:30h a 14:30h / 16:00h. a 20:00h\nDo 10:00h- 14:00h",
-    description:
-      "Queremos tener un impacto real sobre la vida de millones de personas, ayudándoles a cuidar de su bienestar físico.",
-    active: true,
-    location: [42.23467918479185, -8.710717311486247],
-    province: "Pontevedra",
-    address: "Centro Comercial Barreiro",
-    adminId: "6390ecc94953ade53a394b6e",
-  };
+  // $: gym = {
+  //   name: "Gym 100",
+  //   email: "gym100@fitmeup.com",
+  //   logoUrl: "./../assets/img/map.jpg",
+  //   phone: "123456789",
+  //   openHours:
+  //     "Lu-Vi 7:30h a 23:00h\nSa 9:30h a 14:30h / 16:00h. a 20:00h\nDo 10:00h- 14:00h",
+  //   description:
+  //     "Queremos tener un impacto real sobre la vida de millones de personas, ayudándoles a cuidar de su bienestar físico.",
+  //   active: true,
+  //   location: [42.23467918479185, -8.710717311486247],
+  //   province: "Pontevedra",
+  //   address: "Centro Comercial Barreiro",
+  //   adminId: "6390ecc94953ade53a394b6e",
+  // };
 
   let errors = InitGymValidForm();
   $: errors = formValidate(touchedFields, gym);
 
-  const formValidate = () => {
-    const errors = InitGymValidForm();
-    console.log("errors", errors);
-    if (touchedFields.name) {
-      const minLength = 5;
-      if (requiredValidator(gym.name).isValid === false)
-        errors.name = requiredValidator(gym.name).error;
-      else if (minLengthValidator(gym.name, minLength).isValid === false)
-        errors.name = minLengthValidator(gym.name, minLength).error;
-    }
-
-    if (touchedFields.email) {
-      if (requiredValidator(gym.email).isValid === false)
-        errors.email = requiredValidator(gym.email).error;
-      else if (emailValidator(gym.email).isValid === false)
-        errors.email = emailValidator(gym.email).error;
-    }
-
-    if (touchedFields.phone) {
-      if (requiredValidator(gym.phone).isValid === false)
-        errors.phone = requiredValidator(gym.phone).error;
-      else if (phoneValidator(gym.phone).isValid === false)
-        errors.phone = phoneValidator(gym.phone).error;
-    }
-
-    if (touchedFields.openHours) {
-      const minLength = 5;
-      if (requiredValidator(gym.openHours).isValid === false)
-        errors.openHours = requiredValidator(gym.openHours).error;
-      else if (minLengthValidator(gym.openHours, minLength).isValid === false)
-        errors.openHours = minLengthValidator(gym.openHours, minLength).error;
-    }
-
-    if (touchedFields.description) {
-      const minLength = 50;
-      if (requiredValidator(gym.description).isValid === false)
-        errors.description = requiredValidator(gym.description).error;
-      else if (minLengthValidator(gym.description, minLength).isValid === false)
-        errors.description = minLengthValidator(
-          gym.description,
-          minLength
-        ).error;
-    }
-
-    if (touchedFields.province) {
-      if (requiredValidator(gym.province).isValid === false)
-        errors.province = requiredValidator(gym.province).error;
-    }
-
-    if (touchedFields.address) {
-      const minLength = 10;
-      if (requiredValidator(gym.address).isValid === false)
-        errors.address = requiredValidator(gym.address).error;
-      else if (minLengthValidator(gym.address, minLength).isValid === false)
-        errors.address = minLengthValidator(gym.address, minLength).error;
-    }
-
-    return errors;
-  };
-
   async function validateAndSubmit(e: PointerEvent) {
     // e.preventDefault;
-    debugger;
     $goto("./gyms");
 
-    // touchedFields = InitGymTouchedForm();
-    // if (!Object.values(errors).join("").length) {
-    //   const result = await saveGym(gym).then((data) => data);
-    //   if (!result.status) {
-    //     console.error("Problem", result.message);
-    //   } else {
-    //     $goto("./gym");
-    //   }
-    // }
+    touchedFields = InitGymTouchedForm();
+    if (!Object.values(errors).join("").length) {
+      const result = await saveGym(gym).then((data) => data);
+      if (!result.status) {
+        console.error("Problem on Save Gym", result.message);
+      } else {
+        $goto("./gym");
+      }
+    }
   }
 </script>
 
