@@ -4,7 +4,7 @@ const config = {
   theme: {
     extend: {
       backgroundImage:{
-        'heroFit': "url('/src/assets/FitFinderBG.jpg')"
+        'heroFit': "url('/src/assets/gym-victor-freitas.jpg')"
       }
     },
   },
