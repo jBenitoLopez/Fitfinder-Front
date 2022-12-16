@@ -1,8 +1,8 @@
 
 export interface GymRecordPostResult {
-  status: boolean,
+  status?: boolean,
   data?: GymRecord,
-  message: string;
+  message?: string;
 }
 
 
@@ -15,7 +15,7 @@ export interface GymRecord {
   openHours: string,
   description: string,
   active: boolean,
-  location: [number, number],
+  location: number[],
   province: string,
   address: string,
   adminId: string,
@@ -87,3 +87,54 @@ export const InitGymValidForm = (): GymValidForm => {
     address: ''
   };
 };
+
+export interface GymTableData {
+  headers: {
+    id: string,
+    name: string,
+    email: string,
+    phone: string,
+    province: string,
+    address: string,
+    active: string,
+    edit: string,
+    delete: string,
+  },
+  data: TableData[];
+}
+
+export interface TableData {
+  id: string,
+  name: string,
+  email: string,
+  phone: string,
+  province: string,
+  address: string,
+  active: boolean,
+}
+
+
+export const InitGymTableData = (): GymTableData => ({
+  headers: {
+    id: null,
+    name: null,
+    email: null,
+    phone: null,
+    province: null,
+    address: null,
+    active: null,
+    edit: null,
+    delete: null,
+  },
+  data: [
+    {
+      id: null,
+      name: null,
+      email: null,
+      phone: null,
+      province: null,
+      address: null,
+      active: null,
+    }
+  ]
+});

@@ -41,7 +41,19 @@ body {
   .border-error {
     @apply border-red-500;
   }
+
   .error-text {
     @apply text-red-500;
+  }
+
+  .th {
+    @apply px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50;
+  }
+  .tr {
+    @apply hover:bg-violet-50 transition-all;
+  }
+
+  .td {
+    @apply px-6 py-4  border-b whitespace-nowrap border-gray-200;
   }
 }

@@ -1,11 +1,11 @@
 
 /**
  * @roxi/routify 2.18.8
- * File generated Fri Dec 09 2022 21:52:39 GMT+0100 (hora estándar de Europa central)
+ * File generated Fri Dec 16 2022 21:54:13 GMT+0100 (hora estándar de Europa central)
  */
 
 export const __version = "2.18.8"
-export const __timestamp = "2022-12-09T20:52:39.054Z"
+export const __timestamp = "2022-12-16T20:54:13.337Z"
 
 //buildRoutes
 import { buildClientTree } from "@roxi/routify/runtime/buildRoutes"
@@ -24,6 +24,55 @@ export const _tree = {
   "ownMeta": {},
   "absolutePath": "D:/www/Fitfinder-Front/src/pages/_layout.svelte",
   "children": [
+    {
+      "isFile": false,
+      "isDir": true,
+      "file": "gym",
+      "filepath": "/gym",
+      "name": "gym",
+      "ext": "",
+      "badExt": false,
+      "absolutePath": "D:/www/Fitfinder-Front/src/pages/gym",
+      "children": [
+        {
+          "isFile": true,
+          "isDir": false,
+          "file": "_fallback.svelte",
+          "filepath": "/gym/_fallback.svelte",
+          "name": "_fallback",
+          "ext": "svelte",
+          "badExt": false,
+          "absolutePath": "D:/www/Fitfinder-Front/src/pages/gym/_fallback.svelte",
+          "importPath": "../src/pages/gym/_fallback.svelte",
+          "isLayout": false,
+          "isReset": false,
+          "isIndex": false,
+          "isFallback": true,
+          "isPage": false,
+          "ownMeta": {},
+          "meta": {
+            "recursive": true,
+            "preload": false,
+            "prerender": true
+          },
+          "path": "/gym/_fallback",
+          "id": "_gym__fallback",
+          "component": () => import('../src/pages/gym/_fallback.svelte').then(m => m.default)
+        }
+      ],
+      "isLayout": false,
+      "isReset": false,
+      "isIndex": false,
+      "isFallback": false,
+      "isPage": false,
+      "ownMeta": {},
+      "meta": {
+        "recursive": true,
+        "preload": false,
+        "prerender": true
+      },
+      "path": "/gym"
+    },
     {
       "isFile": true,
       "isDir": false,
