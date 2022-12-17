@@ -1,0 +1,19 @@
+<div
+  class="
+  flex 
+  items-center 
+  justify-center 
+  flex-col 
+  card 
+  rounded-xl
+  drop-shadow-xl 
+  p-5 
+  w-full
+  sm:w-96
+  bg-gradient-to-r 
+  from-orange-300 
+  to-purple-300
+  "
+>
+  <slot />
+</div>
