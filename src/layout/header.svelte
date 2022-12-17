@@ -1,20 +1,21 @@
 <script>
-  let src = "src/assets/FitFinderLogo.png";
+  let src = "src/assets/FitFinderColor.svg";
 </script>
 
-<div class="bg-slate-200 header flex justify-between items-center">
+<div class="header flex justify-between items-center">
   
-  <a href="/" class="p-2"><img class="h-13 w-20" src={src} alt="Fitfinder"/></a>
+  <a href="/" class="pt-2"><img class="h-52" src={src} alt="Fitfinder"/></a>
   <div class="mr-5">
-    <a href="/about" class="bg-blue-400 p-3 rounded text-white">About</a>
-    <a href="/contact" class="bg-blue-400 p-3 rounded text-white">Contact</a>
-    <a href="/gyms" class="bg-blue-400 p-3 rounded text-white">Gyms</a>
-    <a href="/login" class="bg-blue-400 p-3 ml-4 rounded text-white">Login</a>
+    <a href="/about" class="bg-teal-100 p-2 rounded text-emerald-900 hover:bg-sky-800 hover:text-emerald-100">About</a>
+    <a href="/contact" class="bg-teal-100 p-2 rounded text-emerald-900 hover:bg-sky-800 hover:text-emerald-100">Contact</a>
+    <a href="/gyms" class="bg-teal-100 p-2 rounded text-emerald-900 hover:bg-sky-800 hover:text-emerald-100">Gyms</a>
+    <a href="/login" class="bg-teal-100 p-2 ml-4 rounded text-emerald-900 hover:bg-sky-800 hover:text-emerald-100">Login</a>
   </div>
 </div>
 
 <style>
   .header {
     height: var(--header-height);
+    background-color:#003399;
   }
 </style>
