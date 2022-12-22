@@ -1,10 +1,8 @@
 <script lang="ts">
-  import { getGym, saveGym } from "../../../services/gym";
+  import { getGym, saveGym } from "../../services/gym";
   import FormGym from "./FormGym.svelte";
 
-  export let data, id;
-  data = data; //borrar esta linea
-  const gymId = id;
+  export let gymId;
 
   const adminId = import.meta.env.VITE_ADMIN_ID;
   let gym;

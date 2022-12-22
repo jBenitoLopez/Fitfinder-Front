@@ -1,38 +1,31 @@
 <script lang="ts">
+  export let title = "";
+  export let gym = InitGymRecord();
+  export let submitFn = (): Promise<GymRecordPostResult> => {
+    return;
+  };
+
   import { goto } from "@roxi/routify";
   import {
     InitGymRecord,
     InitGymTouchedForm,
     InitGymValidForm,
-  } from "../interfaces/gym";
-  import { Button, Input, Select, Textarea } from "../elements/elements";
-  import { formValidate } from "../validation/gymFormValidator";
-  import { saveGym } from "../services/gym";
-  import { provinces_es as provinces } from "../store/address";
-  import { requiredElementsBeenTouched } from "../validation/validators";
+    type GymRecordPostResult,
+  } from "../../interfaces/gym";
+  import {
+    Button,
+    Input,
+    Select,
+    Textarea,
+  } from "../../components/elements/index";
+  import { formValidate } from "../../validation/gymFormValidator";
+
+  import { provinces_es as provinces } from "../../store/address";
+  import { requiredElementsBeenTouched } from "../../validation/validators";
 
   let touchedFields = InitGymTouchedForm();
-  let gym = InitGymRecord();
+  // let gym = InitGymRecord();
   $: gym = gym;
-
-  const adminId = "639473784953ade53a394bc9";
-  const gymId = "639478e14953ade53a394bd6";
-
-  $: gym = {
-    name: "Gym 100",
-    email: "gym100@fitmeup.com",
-    logoUrl: "./../assets/img/map.jpg",
-    phone: "123456789",
-    openHours:
-      "Lu-Vi 7:30h a 23:00h\nSa 9:30h a 14:30h / 16:00h. a 20:00h\nDo 10:00h- 14:00h",
-    description:
-      "Queremos tener un impacto real sobre la vida de millones de personas, ayudándoles a cuidar de su bienestar físico.",
-    active: true,
-    location: [42.23467918479185, -8.710717311486247],
-    province: "Pontevedra",
-    address: "Centro Comercial Barreiro",
-    adminId: adminId,
-  };
 
   let errors = InitGymValidForm();
   $: errors = formValidate(touchedFields, gym);
@@ -42,7 +35,7 @@
     touchedFields = InitGymTouchedForm();
     const touched = requiredElementsBeenTouched(touchedFields);
     if (!Object.values(errors).join("").length) {
-      const result = await saveGym(gym).then((data) => data);
+      const result = await submitFn();
       if (!result.status) {
         console.error("Problem on Save Gym" + result.message);
       } else {
@@ -60,8 +53,8 @@
 
 <!-- https://tailwinduikit.com/components/webapp/form/form_layout -->
 <div class="px-5 py-20 mx-auto prose prose-blue md:px-0 lg:prose-lg lg:mt-24">
-  <h1 class="text-5xl font-bold mt-0 mb-6">Form New/Alter Gym</h1>
-
+  <h1 class="text-5xl font-bold mt-0 mb-6">{title}</h1>
+  <!-- Form New/Alter Gym -->
   <form action="/createGym">
     <div class="mb-6">
       <label for="description" class="label">Logo</label>
@@ -148,7 +141,9 @@ So 10:00h-14:00h..."
     </div>
 
     <div class="w-full block">
-      <Button on:click={validateAndSubmit}>Save</Button>
+      <Button on:click={validateAndSubmit}
+        >{gym.gymId ? "Save Gym" : "Create Gym"}</Button
+      >
     </div>
   </form>
 </div>

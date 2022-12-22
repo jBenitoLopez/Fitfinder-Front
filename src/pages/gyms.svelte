@@ -1,10 +1,7 @@
 <script lang="ts">
-  import GymTable from "./_components/CrudGym/GymTable.svelte";
-  import {
-    InitGymTableData,
-    type GymTableData,
-    type TableData,
-  } from "../interfaces/gym";
+  import { url } from "@roxi/routify";
+  import GymTable from "./gym/GymTable.svelte";
+  import { InitGymTableData, type TableData } from "../interfaces/gym";
   import { getGymsByAdmin } from "../services/gym";
 
   const adminId = import.meta.env.VITE_ADMIN_ID;
@@ -41,6 +38,9 @@
   init();
 </script>
 
+<div class="inline-block mt-8">
+  <a class="btn flex items-center" href={$url("/gym/new")}>Create New Gym</a>
+</div>
 {#if tableData && tableData.data.length > 0}
   <GymTable {tableData} />
 {:else}

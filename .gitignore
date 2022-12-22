@@ -11,6 +11,9 @@ node_modules
 dist
 dist-ssr
 *.local
+
+# routify
+/.routify
 /.routify/*
 .routify/routes.js
 .routify/config.js

@@ -2,8 +2,8 @@
   import { url } from "@roxi/routify";
   import { Confirm } from "svelte-confirm";
   import { slide } from "svelte/transition";
-  import { InitGymTableData } from "../../../interfaces/gym";
-  import { deleteGym } from "../../../services/gym";
+  import { InitGymTableData } from "../../interfaces/gym";
+  import { deleteGym } from "../../services/gym";
 
   export let tableData = InitGymTableData();
   // {
@@ -105,7 +105,7 @@
               <td class="td" data-id={row.id}>
                 <!-- Edit -->
                 <a
-                  href={$url("/gym/:id", { id: row.id })}
+                  href={$url("/gym/:adminId", { adminId: row.id })}
                   class="cursor-pointer flex justify-center items-center text-blue-400 hover:text-blue-600 "
                 >
                   <svg
