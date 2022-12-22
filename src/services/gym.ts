@@ -48,6 +48,15 @@ async function getGymsByAdmin(adminId: string): Promise<GymRecordPostResult[]> {
 }
 
 async function saveGym(gym: GymRecord): Promise<GymRecordPostResult> {
+
+  if (gym['id'] || gym['gymId']) {
+    return update(gym);
+  } else {
+    return create(gym);
+  }
+}
+
+async function create(gym: GymRecord): Promise<GymRecordPostResult> {
   const options = {
     method: 'POST',
     headers: {
@@ -58,6 +67,26 @@ async function saveGym(gym: GymRecord): Promise<GymRecordPostResult> {
   };
   const response = await fetch(`${API_DOMAIN}${ENDPOINT_GYM}`, options);
   return response.json();
+}
+
+async function update(gym: GymRecord): Promise<GymRecordPostResult> {
+  const gymId = gym["gymId"] || gym["id"];
+  delete gym["gymId"];
+  delete gym["id"];
+  delete gym["updatedAt"];
+  delete gym["createdAt"];
+
+  const options = {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + API_TOKEN,
+    },
+    body: JSON.stringify(gym)
+  };
+  const response = await fetch(`${API_DOMAIN}${ENDPOINT_GYM}/${gymId}`, options);
+  const json = response.json();
+  return json;
 }
 
 async function deleteGym(gymId: string): Promise<{ status: boolean, message: string; }> {

@@ -7,6 +7,7 @@ export interface GymRecordPostResult {
 
 
 export interface GymRecord {
+  id?: string,
   gymId?: string,
   name: string,
   email: string,
@@ -53,15 +54,15 @@ export interface GymTouchedForm {
   address: boolean,
 }
 
-export const InitGymTouchedForm = (): GymTouchedForm => {
+export const InitGymTouchedForm = (isTouched = false): GymTouchedForm => {
   return {
-    name: false,
-    email: false,
-    phone: false,
-    openHours: false,
-    description: false,
-    province: false,
-    address: false
+    name: isTouched,
+    email: isTouched,
+    phone: isTouched,
+    openHours: isTouched,
+    description: isTouched,
+    province: isTouched,
+    address: isTouched
   };
 };
 

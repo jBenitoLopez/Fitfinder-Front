@@ -1,7 +1,7 @@
 <script lang="ts">
   export let title = "";
   export let gym = InitGymRecord();
-  export let submitFn = (): Promise<GymRecordPostResult> => {
+  export let submitFn = (gym): Promise<GymRecordPostResult> => {
     return;
   };
 
@@ -23,25 +23,37 @@
   import { provinces_es as provinces } from "../../store/address";
   import { requiredElementsBeenTouched } from "../../validation/validators";
 
+  const gymId: string = gym["gymId"];
+  // delete gym["id"];
+  // gym = { ...gym, gymId };
+
   let touchedFields = InitGymTouchedForm();
+
   // let gym = InitGymRecord();
-  $: gym = gym;
+  // $: gym = gym;
 
   let errors = InitGymValidForm();
   $: errors = formValidate(touchedFields, gym);
 
   async function validateAndSubmit(e: PointerEvent) {
     e.preventDefault;
-    touchedFields = InitGymTouchedForm();
+
+    touchedFields = gymId
+      ? InitGymTouchedForm(true)
+      : InitGymTouchedForm(false);
+
     const touched = requiredElementsBeenTouched(touchedFields);
     if (!Object.values(errors).join("").length) {
-      const result = await submitFn();
+      const result = await submitFn(gym);
+
       if (!result.status) {
-        console.error("Problem on Save Gym" + result.message);
+        alert("Problem on Save Gym, show console!");
+        console.error("Problem on Save Gym" + result?.message);
       } else {
-        $goto("./gyms");
+        $goto("../gyms");
       }
     } else {
+      alert("Form is not valid, show console!");
       console.error("Form is not valid", {
         touchedFields,
         touched,
@@ -142,7 +154,7 @@ So 10:00h-14:00h..."
 
     <div class="w-full block">
       <Button on:click={validateAndSubmit}
-        >{gym.gymId ? "Save Gym" : "Create Gym"}</Button
+        >{gymId ? "Save Gym" : "Create Gym"}</Button
       >
     </div>
   </form>
