@@ -11,6 +11,11 @@ node_modules
 dist
 dist-ssr
 *.local
+/.routify/*
+.routify/routes.js
+.routify/config.js
+.routify/urlIndex.json
+
 
 # Editor directories and files
 .vscode/*
@@ -22,4 +27,4 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-.routify
+
