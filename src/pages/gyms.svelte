@@ -1,6 +1,6 @@
 <script lang="ts">
   import { url } from "@roxi/routify";
-  import GymTable from "./gym/GymTable.svelte";
+  import GymTable from "./gyms/GymTable.svelte";
   import { InitGymTableData, type TableData } from "../interfaces/gym";
   import { getGymsByAdmin } from "../services/gym";
 

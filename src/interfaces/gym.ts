@@ -1,7 +1,7 @@
 
 export interface GymRecordPostResult {
   status?: boolean,
-  data?: GymRecord,
+  data?: GymRecord[],
   message?: string;
 }
 

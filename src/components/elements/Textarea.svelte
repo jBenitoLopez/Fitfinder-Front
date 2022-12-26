@@ -25,6 +25,7 @@
     bind:value
     on:input
     on:blur
+    {...$$restProps}
   />
   {#if error}
     <span class="block error-text">{error}</span>
