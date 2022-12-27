@@ -2,7 +2,7 @@
   import Header from "../layout/header.svelte";
 </script>
 
-<main>
+<main class="bg-gray-100">
   <Header />
   <div class="remaning">
     <slot />
