@@ -1,8 +1,11 @@
 [
   "/about",
   "/contact",
-  "/gym-recording",
+  "/gym/FormGym",
+  "/gym/GymTable",
+  "/gym/new",
   "/gyms",
+  "/ideas",
   "/index",
   "/login",
   "/register",
