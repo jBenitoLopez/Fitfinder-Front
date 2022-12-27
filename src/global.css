@@ -12,7 +12,7 @@ body {
 }
 
 :root {
-  --header-height: 40px;
+  --header-height: 50px;
 }
 
 @layer components {

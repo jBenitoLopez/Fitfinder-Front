@@ -1,11 +1,11 @@
 
 /**
  * @roxi/routify 2.18.8
- * File generated Sat Dec 17 2022 13:16:10 GMT+0100 (hora estándar de Europa central)
+ * File generated Mon Dec 26 2022 04:42:27 GMT+0300 (GMT+03:00)
  */
 
 export const __version = "2.18.8"
-export const __timestamp = "2022-12-17T12:16:10.110Z"
+export const __timestamp = "2022-12-26T01:42:27.209Z"
 
 //buildRoutes
 import { buildClientTree } from "@roxi/routify/runtime/buildRoutes"
@@ -22,42 +22,142 @@ export const _tree = {
   "filepath": "/_layout.svelte",
   "root": true,
   "ownMeta": {},
-  "absolutePath": "D:/www/Fitfinder-Front/src/pages/_layout.svelte",
+  "absolutePath": "/home/osman/en_esp_proj3/Fitfinder-Front/src/pages/_layout.svelte",
   "children": [
+    {
+      "isFile": true,
+      "isDir": false,
+      "file": "_fallback.svelte",
+      "filepath": "/_fallback.svelte",
+      "name": "_fallback",
+      "ext": "svelte",
+      "badExt": false,
+      "absolutePath": "/home/osman/en_esp_proj3/Fitfinder-Front/src/pages/_fallback.svelte",
+      "importPath": "../src/pages/_fallback.svelte",
+      "isLayout": false,
+      "isReset": false,
+      "isIndex": false,
+      "isFallback": true,
+      "isPage": false,
+      "ownMeta": {},
+      "meta": {
+        "recursive": true,
+        "preload": false,
+        "prerender": true
+      },
+      "path": "/_fallback",
+      "id": "__fallback",
+      "component": () => import('../src/pages/_fallback.svelte').then(m => m.default)
+    },
+    {
+      "isFile": true,
+      "isDir": false,
+      "file": "about.svelte",
+      "filepath": "/about.svelte",
+      "name": "about",
+      "ext": "svelte",
+      "badExt": false,
+      "absolutePath": "/home/osman/en_esp_proj3/Fitfinder-Front/src/pages/about.svelte",
+      "importPath": "../src/pages/about.svelte",
+      "isLayout": false,
+      "isReset": false,
+      "isIndex": false,
+      "isFallback": false,
+      "isPage": true,
+      "ownMeta": {},
+      "meta": {
+        "recursive": true,
+        "preload": false,
+        "prerender": true
+      },
+      "path": "/about",
+      "id": "_about",
+      "component": () => import('../src/pages/about.svelte').then(m => m.default)
+    },
+    {
+      "isFile": true,
+      "isDir": false,
+      "file": "contact.svelte",
+      "filepath": "/contact.svelte",
+      "name": "contact",
+      "ext": "svelte",
+      "badExt": false,
+      "absolutePath": "/home/osman/en_esp_proj3/Fitfinder-Front/src/pages/contact.svelte",
+      "importPath": "../src/pages/contact.svelte",
+      "isLayout": false,
+      "isReset": false,
+      "isIndex": false,
+      "isFallback": false,
+      "isPage": true,
+      "ownMeta": {},
+      "meta": {
+        "recursive": true,
+        "preload": false,
+        "prerender": true
+      },
+      "path": "/contact",
+      "id": "_contact",
+      "component": () => import('../src/pages/contact.svelte').then(m => m.default)
+    },
     {
       "isFile": false,
       "isDir": true,
-      "file": "gym",
-      "filepath": "/gym",
-      "name": "gym",
+      "file": "gyms",
+      "filepath": "/gyms",
+      "name": "gyms",
       "ext": "",
       "badExt": false,
-      "absolutePath": "D:/www/Fitfinder-Front/src/pages/gym",
+      "absolutePath": "/home/osman/en_esp_proj3/Fitfinder-Front/src/pages/gyms",
       "children": [
         {
           "isFile": true,
           "isDir": false,
-          "file": "_fallback.svelte",
-          "filepath": "/gym/_fallback.svelte",
-          "name": "_fallback",
+          "file": "[gymID].svelte",
+          "filepath": "/gyms/[gymID].svelte",
+          "name": "[gymID]",
           "ext": "svelte",
           "badExt": false,
-          "absolutePath": "D:/www/Fitfinder-Front/src/pages/gym/_fallback.svelte",
-          "importPath": "../src/pages/gym/_fallback.svelte",
+          "absolutePath": "/home/osman/en_esp_proj3/Fitfinder-Front/src/pages/gyms/[gymID].svelte",
+          "importPath": "../src/pages/gyms/[gymID].svelte",
           "isLayout": false,
           "isReset": false,
           "isIndex": false,
-          "isFallback": true,
-          "isPage": false,
+          "isFallback": false,
+          "isPage": true,
           "ownMeta": {},
           "meta": {
             "recursive": true,
             "preload": false,
             "prerender": true
           },
-          "path": "/gym/_fallback",
-          "id": "_gym__fallback",
-          "component": () => import('../src/pages/gym/_fallback.svelte').then(m => m.default)
+          "path": "/gyms/:gymID",
+          "id": "_gyms__gymID",
+          "component": () => import('../src/pages/gyms/[gymID].svelte').then(m => m.default)
+        },
+        {
+          "isFile": true,
+          "isDir": false,
+          "file": "index.svelte",
+          "filepath": "/gyms/index.svelte",
+          "name": "index",
+          "ext": "svelte",
+          "badExt": false,
+          "absolutePath": "/home/osman/en_esp_proj3/Fitfinder-Front/src/pages/gyms/index.svelte",
+          "importPath": "../src/pages/gyms/index.svelte",
+          "isLayout": false,
+          "isReset": false,
+          "isIndex": true,
+          "isFallback": false,
+          "isPage": true,
+          "ownMeta": {},
+          "meta": {
+            "recursive": true,
+            "preload": false,
+            "prerender": true
+          },
+          "path": "/gyms/index",
+          "id": "_gyms_index",
+          "component": () => import('../src/pages/gyms/index.svelte').then(m => m.default)
         }
       ],
       "isLayout": false,
@@ -71,32 +171,7 @@ export const _tree = {
         "preload": false,
         "prerender": true
       },
-      "path": "/gym"
-    },
-    {
-      "isFile": true,
-      "isDir": false,
-      "file": "gym-recording.svelte",
-      "filepath": "/gym-recording.svelte",
-      "name": "gym-recording",
-      "ext": "svelte",
-      "badExt": false,
-      "absolutePath": "D:/www/Fitfinder-Front/src/pages/gym-recording.svelte",
-      "importPath": "../src/pages/gym-recording.svelte",
-      "isLayout": false,
-      "isReset": false,
-      "isIndex": false,
-      "isFallback": false,
-      "isPage": true,
-      "ownMeta": {},
-      "meta": {
-        "recursive": true,
-        "preload": false,
-        "prerender": true
-      },
-      "path": "/gym-recording",
-      "id": "_gymRecording",
-      "component": () => import('../src/pages/gym-recording.svelte').then(m => m.default)
+      "path": "/gyms"
     },
     {
       "isFile": true,
@@ -106,7 +181,7 @@ export const _tree = {
       "name": "gyms",
       "ext": "svelte",
       "badExt": false,
-      "absolutePath": "D:/www/Fitfinder-Front/src/pages/gyms.svelte",
+      "absolutePath": "/home/osman/en_esp_proj3/Fitfinder-Front/src/pages/gyms.svelte",
       "importPath": "../src/pages/gyms.svelte",
       "isLayout": false,
       "isReset": false,
@@ -126,12 +201,37 @@ export const _tree = {
     {
       "isFile": true,
       "isDir": false,
+      "file": "ideas.svelte",
+      "filepath": "/ideas.svelte",
+      "name": "ideas",
+      "ext": "svelte",
+      "badExt": false,
+      "absolutePath": "/home/osman/en_esp_proj3/Fitfinder-Front/src/pages/ideas.svelte",
+      "importPath": "../src/pages/ideas.svelte",
+      "isLayout": false,
+      "isReset": false,
+      "isIndex": false,
+      "isFallback": false,
+      "isPage": true,
+      "ownMeta": {},
+      "meta": {
+        "recursive": true,
+        "preload": false,
+        "prerender": true
+      },
+      "path": "/ideas",
+      "id": "_ideas",
+      "component": () => import('../src/pages/ideas.svelte').then(m => m.default)
+    },
+    {
+      "isFile": true,
+      "isDir": false,
       "file": "index.svelte",
       "filepath": "/index.svelte",
       "name": "index",
       "ext": "svelte",
       "badExt": false,
-      "absolutePath": "D:/www/Fitfinder-Front/src/pages/index.svelte",
+      "absolutePath": "/home/osman/en_esp_proj3/Fitfinder-Front/src/pages/index.svelte",
       "importPath": "../src/pages/index.svelte",
       "isLayout": false,
       "isReset": false,
@@ -156,7 +256,7 @@ export const _tree = {
       "name": "login",
       "ext": "svelte",
       "badExt": false,
-      "absolutePath": "D:/www/Fitfinder-Front/src/pages/login.svelte",
+      "absolutePath": "/home/osman/en_esp_proj3/Fitfinder-Front/src/pages/login.svelte",
       "importPath": "../src/pages/login.svelte",
       "isLayout": false,
       "isReset": false,
@@ -181,7 +281,7 @@ export const _tree = {
       "name": "register",
       "ext": "svelte",
       "badExt": false,
-      "absolutePath": "D:/www/Fitfinder-Front/src/pages/register.svelte",
+      "absolutePath": "/home/osman/en_esp_proj3/Fitfinder-Front/src/pages/register.svelte",
       "importPath": "../src/pages/register.svelte",
       "isLayout": false,
       "isReset": false,
@@ -206,7 +306,7 @@ export const _tree = {
       "name": "user",
       "ext": "",
       "badExt": false,
-      "absolutePath": "D:/www/Fitfinder-Front/src/pages/user",
+      "absolutePath": "/home/osman/en_esp_proj3/Fitfinder-Front/src/pages/user",
       "children": [
         {
           "isFile": true,
@@ -216,7 +316,7 @@ export const _tree = {
           "name": "[userid]",
           "ext": "svelte",
           "badExt": false,
-          "absolutePath": "D:/www/Fitfinder-Front/src/pages/user/[userid].svelte",
+          "absolutePath": "/home/osman/en_esp_proj3/Fitfinder-Front/src/pages/user/[userid].svelte",
           "importPath": "../src/pages/user/[userid].svelte",
           "isLayout": false,
           "isReset": false,
@@ -241,7 +341,7 @@ export const _tree = {
           "name": "index",
           "ext": "svelte",
           "badExt": false,
-          "absolutePath": "D:/www/Fitfinder-Front/src/pages/user/index.svelte",
+          "absolutePath": "/home/osman/en_esp_proj3/Fitfinder-Front/src/pages/user/index.svelte",
           "importPath": "../src/pages/user/index.svelte",
           "isLayout": false,
           "isReset": false,

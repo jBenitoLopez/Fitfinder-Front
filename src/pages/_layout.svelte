@@ -4,7 +4,7 @@
 
 <main class="bg-gray-100">
   <Header />
-  <div class="remaning">
+  <div class="remaning overflow-y-auto">
     <slot />
   </div>
 </main>

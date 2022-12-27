@@ -1,110 +1,60 @@
-import type { GymRecord, GymRecordPostResult } from '../interfaces/gym';
-
-
-
+import type { GymRecord, GymRecordPostResult } from "../interfaces/gym";
 const API_TOKEN = import.meta.env.VITE_API_TOKEN;
-
-
 const API_DOMAIN = import.meta.env.VITE_API_DOMAIN;
-const ENDPOINT_GYM = import.meta.env.VITE_ENDPOINT_GYM;
+const EP_GYM = import.meta.env.VITE_ENDPOINT_GYM;
 
-async function getGym3(gymId: string) {
-
-  const options = {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': 'Bearer ' + API_TOKEN,
-    }
-  };
-  return await fetch('https://jsonplaceholder.typicode.com/posts', options)
-    .then(data => data.json());
+const headers ={
+  "Content-Type": "application/json",
+  Authorization: "Bearer " + API_TOKEN,
 }
-
-async function getGym(gymId: string): Promise<GymRecordPostResult> {
-
-  const options = {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': 'Bearer ' + API_TOKEN,
-    }
-  };
-  const response = await fetch(`${API_DOMAIN}${ENDPOINT_GYM}/${gymId}`, options);
-  return response.json();
-}
-
-async function getGymsByAdmin(adminId: string): Promise<GymRecordPostResult[]> {
-  //{{baseUrl}}/user/{{adminId}}/gym
-  const options = {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': 'Bearer ' + API_TOKEN,
-    }
-  };
-  const response = await fetch(`${API_DOMAIN}/user/${adminId}/gym`, options);
-  return response.json();
-}
-
-async function saveGym(gym: GymRecord): Promise<GymRecordPostResult> {
-
-  if (gym['id'] || gym['gymId']) {
-    return update(gym);
-  } else {
-    return create(gym);
-  }
-}
-
-async function create(gym: GymRecord): Promise<GymRecordPostResult> {
-  const options = {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': 'Bearer ' + API_TOKEN,
-    },
-    body: JSON.stringify(gym)
-  };
-  const response = await fetch(`${API_DOMAIN}${ENDPOINT_GYM}`, options);
-  return response.json();
-}
-
-async function update(gym: GymRecord): Promise<GymRecordPostResult> {
-  const gymId = gym["gymId"] || gym["id"];
-  delete gym["gymId"];
-  delete gym["id"];
-  delete gym["updatedAt"];
-  delete gym["createdAt"];
-
-  const options = {
-    method: 'PUT',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': 'Bearer ' + API_TOKEN,
-    },
-    body: JSON.stringify(gym)
-  };
-  const response = await fetch(`${API_DOMAIN}${ENDPOINT_GYM}/${gymId}`, options);
-  const json = response.json();
-  return json;
-}
-
-async function deleteGym(gymId: string): Promise<{ status: boolean, message: string; }> {
-
-  const options = {
-    method: 'DELETE',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': 'Bearer ' + API_TOKEN,
-    }
-  };
-  const response = await fetch(`${API_DOMAIN}${ENDPOINT_GYM}/${gymId}`, options);
-  return response.json();
-}
-
-export {
-  getGym,
-  getGymsByAdmin,
-  saveGym,
-  deleteGym,
+const getOptions = {
+  method: "GET",
+  headers
 };
+
+async function getGyms() {
+  return await fetch(`${API_DOMAIN}${EP_GYM}`, getOptions)
+    .then((data) => data.json())
+    .then((data) => data.data)
+    .catch((error) => Error(error.message));
+}
+async function getGymByID(gymID: string) {
+  let response =  await fetch(`${API_DOMAIN}${EP_GYM}/${gymID}`, getOptions)
+    .then((data) => data.json())
+    .then((data) => data.data)
+    .catch((error) => Error(error.message));
+  delete response.id
+  delete response.createdAt
+  delete response.updatedAt
+  return response
+}
+async function createGym(body: GymRecord) {
+  const options = {
+    method: "POST",
+   headers,
+    body: JSON.stringify(body),
+  };
+  return await fetch(`${API_DOMAIN}${EP_GYM}`, options)
+    .then((data) => data.json())
+    .catch((error) => Error(error.message));
+}
+async function updateGym(gymID:string,body: GymRecord) {
+  const options = {
+    method: "PUT",
+    headers,
+    body: JSON.stringify(body),
+  };
+  return await fetch(`${API_DOMAIN}${EP_GYM}/${gymID}`, options)
+    .then((data) => data.json())
+    .catch((error) => Error(error.message));
+}
+async function deleteGym(gymID: string) {
+  const options = {
+    method: "DELETE",
+    headers
+  };
+  return await fetch(`${API_DOMAIN}${EP_GYM}/${gymID}`, options)
+    .then((data) => data.json())
+    .catch((error) => Error(error.message));
+}
+export { getGyms, getGymByID, createGym, deleteGym,updateGym };

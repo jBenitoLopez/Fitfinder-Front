@@ -1,8 +1,9 @@
 [
   "/about",
   "/contact",
-  "/gym-recording",
+  "/gyms/index",
   "/gyms",
+  "/ideas",
   "/index",
   "/login",
   "/register",
