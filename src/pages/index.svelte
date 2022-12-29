@@ -1,4 +1,5 @@
 <script lang="ts">
+  import CardTopTen from "../components/elements/CardTopTen.svelte";
   let count: number = 0;
 </script>
 
@@ -10,22 +11,7 @@
     <div class="grid grid-cols-3 gap-3">
         <!-- Card topTen-->
         <div class="">
-          <h2 class="text-emerald-100 text-2xl">Top ten Gym</h2>
-          <div class="bg-teal-100 rounded-xl m-3 text-left pl-10">
-            <ol class="text-lg list-decimal">
-              <li>The Gym Six Sense</li>
-              <li>Grupo Arsenal</li>
-              <li>Iradier</li>
-              <li>Caroli Health Club</li>
-              <li>Reebook Sport</li>
-              <li>Zagros Sport</li>
-              <li>Metropolitan</li>
-              <li>O2 Wellness Center</li>
-              <li>Príncipe Sport</li>
-              <li>Príncipe Sport</li>
-            </ol>
-          </div>
-          
+          <CardTopTen/>
         </div>
         <!-- Card review-->
         <div class="">
